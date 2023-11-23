@@ -18,13 +18,18 @@
 </head>
 <script>
     // Get the current URL
-    var currentUrl = window.location.href;
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    if (isMobileDevice) {
+        var currentUrl = window.location.href;
 
-    // Construct the new URL
-    var newUrl = "tellmee://" + currentUrl.substring(currentUrl.indexOf('//') + 2);
-    
-    // Navigate to the new URL
-    window.location.href = newUrl;
+        // Construct the new URL
+        var newUrl = "tellmee://" + currentUrl.substring(currentUrl.indexOf('//') + 2);
+
+        // Navigate to the new URL
+        window.location.href = newUrl;
+    }
 </script>
 <!-- Other HTML content -->
 </head>
