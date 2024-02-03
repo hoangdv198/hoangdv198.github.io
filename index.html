@@ -23,27 +23,27 @@
     function isMobileDevice() {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
-    if (isMobileDevice()) {
-        try {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const idTell = urlParams.get('id');
-            if (idTell != null) {
-                // // Navigate to the new URL
-                const appLink = `tellmee://tellmee.app/?id=${idTell}`;
-                console.log("open applink",appLink)
-                window.location.href = appLink;
-            }
-        } catch (error) {
-            console.log(error)
-        }
+    // if (isMobileDevice()) {
+    //     try {
+    //         const queryString = window.location.search;
+    //         const urlParams = new URLSearchParams(queryString);
+    //         const idTell = urlParams.get('id');
+    //         if (idTell != null) {
+    //             // // Navigate to the new URL
+    //             const appLink = `tellmee://tellmee.app/?id=${idTell}`;
+    //             console.log("open applink",appLink)
+    //             window.location.replace(appLink);
+    //         }
+    //     } catch (error) {
+    //         console.log("error",error)
+    //     }
 
-    }
+    // }
 </script>
 <!-- Other HTML content -->
 </head>
 <body>
-    4
+    6
     <a href="tellmee://tellmee.app/?id=8140d5cf-4718-4dcb-aa66-1034ef313b2d">Open Tellmee ios app 123</a>
     <button onclick="location.reload()">Reload Page</button>
     <!-- <button onclick="location.hash = '#success'">Success</button>
