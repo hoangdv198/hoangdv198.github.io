@@ -28,8 +28,8 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const idTell = urlParams.get('id');
-            if (idTell != null) {
-                // // Navigate to the new URL
+            if (!!idTell) {
+                // // Navigate to the new URL   
                 const appLink = `tellmee://tellmee.app/?id=${idTell}`;
                 console.log("open applink",appLink)
                 window.location.href = appLink;
