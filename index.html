@@ -1,53 +1,23 @@
-
 <html>
 <head>
-    <!-- https://tellmee.app/ -->
-    <!-- https://hoangdv198.github.io/ -->
-    
-    <!-- config mess applink -->
-    <!-- <meta property="og:title" content="Tellmee app" />
-    <meta property="og:type" content="website" /> -->
-    <!-- // ios -->
-    <meta property="al:ios:url" content="tellmee://tellmee.app" />
-    <meta property="al:ios:app_store_id" content="6464501278" />
-    <meta property="al:ios:app_name" content="Tellmee" />
-    <!-- android -->
-    <!-- <meta property="al:android:url" content="tellmee://tellmee.app/">
-    <meta property="al:android:package" content=" app.tellmee">
-    <meta property="al:android:app_name" content="Tellmee"> -->
-    <!-- end config mess applink -->
-    <!-- Other headers -->
 </head>
 <script>
-    // Get the current URL
-    function isMobileDevice() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-    if (isMobileDevice()) {
-        try {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const idTell = urlParams.get('id');
-            if (!!idTell) {
-                // // Navigate to the new URL   
-                const appLink = `tellmee://tellmee.app/?id=${idTell}`;
-                console.log("open applink",appLink)
-                window.location.href = appLink;
-            }
-        } catch (error) {
-            console.log(error)
-        }
+    document.addEventListener("message", function(event) {
+      alert("Message received from React Native: " + event.data);
+    });
 
+    function sendMessageToReactNative() {
+      if (window.ReactNativeWebView && window.ReactNativeWebView.postMessage) {
+        window.ReactNativeWebView.postMessage("Hello from WebView");
+      } else {
+        alert("Not running in React Native WebView");
+      }
     }
-</script>
+  </script>
 <!-- Other HTML content -->
 </head>
 <body>
-    4
-    <a href="tellmee://tellmee.app/?id=8140d5cf-4718-4dcb-aa66-1034ef313b2d">Open Tellmee ios app 123</a>
-    <button onclick="location.reload()">Reload Page</button>
-    <!-- <button onclick="location.hash = '#success'">Success</button>
-    <button onclick="location.hash = '#error'">Error</button> -->
-    <!-- <button onclick="location.href = 'https://hoangdv198.github.io/#success'" >Redirect with Fragment</button> -->
+    Test postMessage 
+    <button onclick="sendMessageToReactNative()">test postMessage</button>
 </body>
 </html>
