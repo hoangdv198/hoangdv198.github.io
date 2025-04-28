@@ -1,11 +1,11 @@
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-        {
-          "appID": "4YRTP8GC8M.com.gamigo.metaserv",
-          "paths": ["*"]
-        }
-      ]
-    }
+  "applinks": {
+      "apps": [],
+      "details": [
+      {
+        "appID": "55T58WTSHF.com.mobifone.gamigo",
+        "paths": ["*"]
+      }
+    ]
   }
+}
