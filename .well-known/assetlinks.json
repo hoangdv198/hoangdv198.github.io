@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "tellmee",
+      "package_name": "com.gamigo.metaserv",
       "sha256_cert_fingerprints": [
-        "17:22:37:3e:c3:75:48:1c:2d:2b:f9:4c:c8:dd:b5:2f:7e:5f:00:73"
+        "C9:F0:E3:74:A0:C0:23:AD:8D:5F:12:85:C1:82:1E:84:65:54:26:7D:30:30:B0:FE:CB:F2:D3:1F:D4:41:B7:E8"
       ]
     }
   }
